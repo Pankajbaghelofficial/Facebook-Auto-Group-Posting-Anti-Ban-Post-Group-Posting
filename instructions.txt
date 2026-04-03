@@ -1,0 +1,58 @@
+=======================================================
+   FACEBOOK POSTER TOOL - FULL INSTRUCTIONS
+=======================================================
+
+This CLI (Command-Line) tool allows you to safely post to 
+multiple Facebook groups automatically, avoiding bans by utilizing 
+human-like delays.
+
+STEP 1: PACKAGE INSTALLATION (PREREQUISITES)
+-------------------------------------------------------
+The script requires ONE external package: `selenium`. 
+All other packages (`time`, `random`, `os`, `json`) are built into Python by default so no installation is needed for them.
+
+Open your Terminal and run the following command to install Selenium:
+
+    pip3 install selenium
+
+(If the command fails with 'command not found', use this fallback command):
+    python3 -m pip install selenium
+
+STEP 2: HOW TO START THE TOOL
+-------------------------------------------------------
+In your Terminal, run the script using this command:
+
+    python3 **** File-path ***** /fb_poster.py
+
+STEP 3: PROVIDING DETAILS TO THE SCRIPT
+-------------------------------------------------------
+The script will run interactively in the terminal and ask you for details:
+1. Group URLs: Paste your Facebook Group URLs one by one. Press ENTER after each one.
+   When you have entered all your URLs, press ENTER on a BLANK line to move to the next step.
+2. Save Prompt: It will ask if you want to save these URLs for next time. Press 'y' to save.
+3. Text Content: Enter the message you want to post.
+   When you finish typing your message, type the word "END" completely capitalized on a new blank line, and press ENTER.
+4. Image Path: If you want to attach an image, Drag & Drop the image file from Finder directly into the terminal window (it will auto-paste the path) and press ENTER. If you don't want an image, just press ENTER to skip.
+
+STEP 4: MANUAL LOGIN (CRITICAL FOR SAFETY)
+-------------------------------------------------------
+The script will now open a new Chrome Browser window automatically.
+- Navigate to Facebook in the newly opened Chrome window.
+- Manually enter your Email/Password and Log In. (This is to prevent Facebook from banning your account due to automated logins).
+- !! IMPORTANT !!: WAIT until you see your Facebook Feed. ONLY THEN should you go back to the Terminal and press ENTER to tell the script to continue.
+
+STEP 5: AUTOMATIC POSTING & CONFIRMATION
+-------------------------------------------------------
+The script will take over from here:
+1. It will navigate to the first group URL.
+2. It will wait randomly between 5 to 10 seconds to mimic human behavior.
+3. It will automatically find the text box, paste your message, and upload your image.
+4. HUMAN CONFIRMATION STOP: It will pause right before clicking the final 'Post' button and state:
+   "✨ READY TO POST ✨ >> Press ENTER to POST"
+5. Look at the browser window to verify everything looks correct. Then return to the Terminal and press ENTER.
+6. The script will automatically click the "Post" button, delay for 15 seconds to respect rate limits, and move on to the next group!
+
+NOTE / TIPS:
+-------------------------------------------------------
+- The delays (Waiting for X seconds...) are intentional to mimic a real human and protect your account from getting blocked. Do not interrupt them.
+- If Facebook loads very slowly and the script misses a click, you can always manually click it in the browser to assist the script.
